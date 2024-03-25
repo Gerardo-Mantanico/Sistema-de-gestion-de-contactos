@@ -7,7 +7,7 @@
 using  namespace  std;
 
 void CrearGrupo( string nombre, string campo){
-        hhash *hashs= new hhash();
+        hhash *hashs= new hhash(5);
         string nombre_grupo = nombre;
         cout << "Nombre del grupo: " << nombre_grupo << endl;
         cout << "Campos:"<<endl;
@@ -17,18 +17,17 @@ void CrearGrupo( string nombre, string campo){
         auto fin =campo.cend();
         while (regex_search(inicio, fin, match_campos, patron_campos)) {
             Campo *nuevo_campo = new Campo(match_campos[1],match_campos[1]);
-            int index= hashs->function_hash(nuevo_campo->getNombre(),5);
-            cout<<"la llave es : "<<index<<endl;
-            hashs->insertar_campo(index,nuevo_campo);
+            hashs->insertar_campo(nuevo_campo);
             cout<<"--------------------------------------------"<<endl;
         inicio = match_campos[0].second;
     }
-    for (int i = 0; i <hashs->size_lista; ++i) {
-     if(hashs->lista_campo[i]!=0){
-         cout<<i<<" "<<hashs->lista_campo[i]->campos->getNombre()<<endl;
+    for (int i = 0; i <hashs->lis.size(); ++i) {
+     if(hashs->lis[i]!=0){
+         cout<<i<<" "<<hashs->lis[i]->campos->getNombre()<<"   "<<hashs->lis[i]->campos->getTipo()<<endl;
+
      }
      else{
-         cout<<i<<" "<<hashs->lista_campo[i]<<endl;
+         cout<<i<<" "<<hashs->lis[i]<<endl;
      }
     }
 
@@ -63,13 +62,14 @@ void gramatrica(string &texto) {
 
 
 void Terminal::consola() {
-    string comando="NO";
-    while(comando!="S"){
-        cout<<endl<<"Para salir de la terminal precione S \n";
-        cout<<"TERMINAL INICIALIZADA \n";
-        getline(cin,comando);
+    string comando;
+    do {
+        cout << endl << "Para salir de la terminal presione 'S'\n";
+        cout << "TERMINAL INICIALIZADA\n";
+        getline(cin, comando);
         gramatrica(comando);
-    }
+
+    } while (comando != "S" && comando != "s"); // Asegú
 }
 
 void Terminal::entrada(string texto) {

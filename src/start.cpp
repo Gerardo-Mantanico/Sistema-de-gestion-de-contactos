@@ -10,7 +10,7 @@ Importacion *importacion= new Importacion();
 
 void start::Start() {
     int menu;
-    cout <<"              Gestion de contactos"<<endl;
+    cout <<"\t Gestion de contactos"<<endl;
     cout<<" 1) Terminal"<<endl;
     cout<<" 2) Reportes"<<endl;
     cout<<" 3) Gráficas de las Estructuras"<<endl;

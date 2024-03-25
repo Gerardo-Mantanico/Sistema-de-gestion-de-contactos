@@ -10,7 +10,6 @@ add_executable(Gestion_Contactos main.cpp
         include/hhash.h
         src/Terminal.cpp
         include/Terminal.h
-        include/Nodo.h
         src/Importacion.cpp
         include/Importacion.h
         include/Campo.h

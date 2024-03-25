@@ -17,5 +17,8 @@ public:
     string getNombre(){
         return this->nombre;
     }
+    string getTipo(){
+        return this->tipo;
+    }
 };
 #endif //GESTION_CONTACTOS_CAMPO_H

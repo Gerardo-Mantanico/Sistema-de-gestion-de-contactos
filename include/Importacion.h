@@ -1,9 +1,12 @@
+#include<iostream>
+#include<string>
+#include "NodoGrupo.h"
+
+using namespace std;
 #ifndef GESTION_CONTACTOS_IMPORTACION_H
 #define GESTION_CONTACTOS_IMPORTACION_H
-
-
 class Importacion {
-public:  void archivo();
+public:  vector<NodoGrupo*> archivo();
 };
 
 

@@ -11,7 +11,7 @@ public:
             char caractaer=name_groups[i];
             sum+=(caractaer*(i+1));
         }
-        cout<<name_groups<<" "<<sum%size<<"  "<<size<<endl;
+        cout<<"Nombre del Grupo: "<<name_groups<<" "<<"\tLLave: "<<sum%size<<"\t  tamano de arreglo\t"<<size<<endl;
         return sum%size;
     }
 };

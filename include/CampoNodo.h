@@ -1,15 +1,18 @@
-#include "Campo.h"
 #include<iostream>
+#include <string>
+using namespace std;
 #ifndef GESTION_CONTACTOS_CAMPONODO_H
 #define GESTION_CONTACTOS_CAMPONODO_H
 class  CampoNodo{
 public:
     int llave;
-    Campo *campos;
+    string  name_campo;
+    string type;
     CampoNodo* siguiente;
-    CampoNodo(int llave, Campo *campos){
+    CampoNodo(int llave, string name_campo, string type){
         this->llave=llave;
-        this->campos=campos;\
+        this->name_campo=name_campo;
+        this->type=type;
         this->siguiente=NULL;
     }
 

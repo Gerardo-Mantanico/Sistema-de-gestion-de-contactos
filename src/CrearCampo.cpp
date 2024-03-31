@@ -1,5 +1,5 @@
-#include "../include/CrearCampo.h"
-#include "../include/FuncionHash.h"
+#include "../include/utilidades/CrearCampo.h"
+#include "../include/hash/FuncionHash.h"
 using namespace std;
 
 FuncionHash *f= new FuncionHash;

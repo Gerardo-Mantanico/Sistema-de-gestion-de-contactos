@@ -1,0 +1,7 @@
+digraph G {
+    node [shape=circle, style=filled, fillcolor=lightblue, fontcolor=black]; // Configuración de nodos
+    
+    53 [label="Alvarez"];
+    53 -> 45;
+    45 [label="Alvarez1"];
+}

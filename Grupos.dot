@@ -1,0 +1,9 @@
+digraph G {
+    node [shape=circle, style=filled, fillcolor=lightblue, fontcolor=black]; // Configuración de nodos
+    
+    8 [label="apellido"];
+    8 -> 5;
+    5 [label="nombre"];
+    8 -> 10;
+    10 [label="celular"];
+}

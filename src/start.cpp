@@ -1,13 +1,15 @@
-#include "../include/start.h"
-#include "../include/Terminal.h"
-#include "../include/Importacion.h"
+#include "../include/recursos/start.h"
+#include "../include/recursos/Terminal.h"
+#include "../include/recursos/Importacion.h"
+#include "../include/Nodos/NodoGraph.h"
+#include "../include/utilidades/GeneradorDotFile.h"
+#include "../include/recursos/Graficas.h"
 #include <iostream>
 using namespace std;
 Terminal *terminal= new Terminal(5);
 Importacion *importacion= new Importacion();
-vector<NodoGrupo*>list;
-
-
+vector<NodoGrupo*>lista;
+Graficas *graficas = new Graficas();
 void start::Start() {
     int menu=0;
     while(menu!=6){
@@ -23,27 +25,25 @@ void start::Start() {
         switch (menu) {
             case  1:
                 terminal->consola();
-                list=terminal->list;
+                lista=terminal->list;
                 break;
             case  2:
-                for (int i = 0; i <list.size(); ++i) {
-                    if(list[i]!=0){
-                        cout<<i<<" "<<list[i]->name_grupo<<endl;
+                for (int i = 0; i <lista.size(); ++i) {
+                    if(lista[i]!=0){
+                        cout<<i<<" "<<lista[i]->name_grupo<<endl;
                     }
                     else{
-                        cout<<i<<" "<<list[i]<<endl;
+                        cout<<i<<" "<<lista[i]<<endl;
                     }
                 }
                 break;
             case  3:
+                graficas->menu(lista);
                 break;
             case  4:
                 break;
             case  5:
-                list=importacion->archivo();
-                break;
-            case  6:
-
+                lista=importacion->archivo();
                 break;
             default:
                 cout<<"Fuera de rango"<<endl;

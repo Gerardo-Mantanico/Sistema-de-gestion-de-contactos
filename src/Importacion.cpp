@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../include/Importacion.h"
-#include "../include/Terminal.h"
+#include "../include/recursos/Importacion.h"
+#include "../include/recursos/Terminal.h"
 #include <string>
 #include <fstream>
 using namespace std;

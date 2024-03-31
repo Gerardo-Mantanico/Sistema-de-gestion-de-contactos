@@ -1,10 +1,14 @@
 #include <iostream>
-#include "../include/Terminal.h"
-#include "../include/CrearGrupo.h"
+#include "../include/recursos/Terminal.h"
+#include "../include/utilidades/CrearGrupo.h"
+#include "../include/utilidades/AgregarContactos.h"
+#include "../include/utilidades/GeneradorDotFile.h"
 #include <string>
 #include <regex>
 using  namespace  std;
 CrearGrupo *grupo= new CrearGrupo();
+AgregarContactos *agregar= new AgregarContactos();
+GeneradorDotFile *gd= new GeneradorDotFile();
 void gramatica(string &texto, vector<NodoGrupo*> &lista) {
     // Expresiones regulares
     regex regex_add_new_group("ADD\\s+NEW-GROUP\\s+(\\w+)\\s+FIELDS\\s+\\((.*?)\\);");
@@ -15,12 +19,11 @@ void gramatica(string &texto, vector<NodoGrupo*> &lista) {
             grupo->crear(matches[1],matches[2],lista);
 
         } else if (regex_match(texto, matches, regex_add_contact_in)) {
-            //crear contacto
-            cout << "Grupo: " << matches[1] <<endl;
-            cout << "Campos: " <<endl;
-            for (int i = 0; i < matches.size(); ++i) {
-                cout << matches[i] <<endl;
+           agregar->buscargrupo(matches[1],lista);
+            for (int i = 2; i < matches.size(); ++i) {
+               agregar->insertarCampos(matches[i]);
             }
+
         } else if (regex_match(texto, matches, regex_find_contact_in)) {
             //bucar contacto
             cout << "FIND CONTACT IN:" <<endl;

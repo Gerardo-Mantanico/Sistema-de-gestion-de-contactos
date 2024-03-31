@@ -31,6 +31,7 @@ void Graficas::menu(vector<NodoGrupo*>list) {
                     }
                 }
                 generador->generateDotFile(nodo,"../Campos.dot");
+                system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Campos.png");
                 break;
             case 2:
                 nodo=NULL;
@@ -44,6 +45,7 @@ void Graficas::menu(vector<NodoGrupo*>list) {
                     }
                 }
                 generador->generateDotFile(nodo,"../Grupos.dot");
+                system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Grupos.png");
                 break;
             case 3:
                 nodo=NULL;
@@ -61,7 +63,7 @@ void Graficas::menu(vector<NodoGrupo*>list) {
 
                 }
                 generador->generateDotFile(nodo,"../Grupo_campos.dot");
-
+                system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Grupo_campos.png");
                 break;
         }
 

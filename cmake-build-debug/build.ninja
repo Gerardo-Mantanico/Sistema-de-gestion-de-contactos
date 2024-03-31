@@ -109,6 +109,12 @@ build CMakeFiles/Gestion_Contactos.dir/src/Graficas.cpp.obj: CXX_COMPILER__Gesti
   OBJECT_DIR = CMakeFiles\Gestion_Contactos.dir
   OBJECT_FILE_DIR = CMakeFiles\Gestion_Contactos.dir\src
 
+build CMakeFiles/Gestion_Contactos.dir/src/Exportaciones.cpp.obj: CXX_COMPILER__Gestion_Contactos_unscanned_Debug C$:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/src/Exportaciones.cpp || cmake_object_order_depends_target_Gestion_Contactos
+  DEP_FILE = CMakeFiles\Gestion_Contactos.dir\src\Exportaciones.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Gestion_Contactos.dir
+  OBJECT_FILE_DIR = CMakeFiles\Gestion_Contactos.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Gestion_Contactos
@@ -117,7 +123,7 @@ build CMakeFiles/Gestion_Contactos.dir/src/Graficas.cpp.obj: CXX_COMPILER__Gesti
 #############################################
 # Link the executable Gestion_Contactos.exe
 
-build Gestion_Contactos.exe: CXX_EXECUTABLE_LINKER__Gestion_Contactos_Debug CMakeFiles/Gestion_Contactos.dir/main.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/start.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Terminal.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Importacion.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/CrearGrupo.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/CrearCampo.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/GeneradorDotFile.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/ArbolAlv.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/AgregarContactos.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Graficas.cpp.obj
+build Gestion_Contactos.exe: CXX_EXECUTABLE_LINKER__Gestion_Contactos_Debug CMakeFiles/Gestion_Contactos.dir/main.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/start.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Terminal.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Importacion.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/CrearGrupo.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/CrearCampo.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/GeneradorDotFile.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/ArbolAlv.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/AgregarContactos.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Graficas.cpp.obj CMakeFiles/Gestion_Contactos.dir/src/Exportaciones.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Gestion_Contactos.dir

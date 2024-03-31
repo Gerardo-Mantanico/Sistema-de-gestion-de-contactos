@@ -3,6 +3,7 @@
 #include <functional>
 #include "../include/utilidades/GeneradorDotFile.h"
 
+
 void GeneradorDotFile::generateDotFile(NodoGraph *root, const std::string &filePath) {
     ofstream file(filePath);
     if (!file.is_open()) {
@@ -35,4 +36,5 @@ void GeneradorDotFile::generateDotFile(NodoGraph *root, const std::string &fileP
     string command = "dot -Tpng " + filePath + " -o " + filePath.substr(0, filePath.find_last_of('.')) + ".png";
     system(command.c_str());
     cout << "Gráfico generado correctamente." << endl;
+    string img=filePath+".png";
 }

@@ -12,21 +12,23 @@ GeneradorDotFile *gd= new GeneradorDotFile();
 void gramatica(string &texto, vector<NodoGrupo*> &lista) {
     // Expresiones regulares
     regex regex_add_new_group("ADD\\s+NEW-GROUP\\s+(\\w+)\\s+FIELDS\\s+\\((.*?)\\);");
-    regex regex_add_contact_in(R"(ADD\s+CONTACT\s+IN\s+(\w+)\s+FIELDS\s*\(\s*(\w+),\s*(\w+),\s*(\w+),\s*([\w-]+)\s*\);)");
+    regex regex_add_contact_in(R"(ADD CONTACT IN (\w+) FIELDS \(([\w, -]+)\);)");
     regex regex_find_contact_in(R"(FIND\s+CONTACT\s+IN\s+(\w+)\s+CONTACT-FIELD\s+(\w+)=(\w+);)");
     smatch matches;
         if (regex_match(texto, matches, regex_add_new_group)) {
             grupo->crear(matches[1],matches[2],lista);
-
         } else if (regex_match(texto, matches, regex_add_contact_in)) {
            agregar->buscargrupo(matches[1],lista);
-            for (int i = 2; i < matches.size(); ++i) {
-               agregar->insertarCampos(matches[i]);
+            string campos = matches[2];
+            regex campoRegex(R"([^,]+)");
+            sregex_iterator campoIterator(campos.begin(), campos.end(), campoRegex);
+            sregex_iterator endIterator;
+            while (campoIterator != endIterator) {
+                agregar->insertarCampos(campoIterator->str());
+                ++campoIterator;
             }
 
         } else if (regex_match(texto, matches, regex_find_contact_in)) {
-            //bucar contacto
-            cout << "FIND CONTACT IN:" <<endl;
             cout << "Grupo: " << matches[1] <<endl;
             cout << "Campo de contacto: " << matches[2] << " = " << matches[3] << endl;
         } else {

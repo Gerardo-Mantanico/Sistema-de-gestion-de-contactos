@@ -12,7 +12,7 @@ public:
     string name_grupo;
     NodoGrupo *siguiente, *anterios;
     vector<CampoNodo*> lista;
-    list<string > campos;
+    list<string> list_estrucura ;
     NodoGrupo(string nombre, int size){
         this->name_grupo=nombre;
         this->lista.resize(size);

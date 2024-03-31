@@ -1,0 +1,1 @@
+nombre	Pedro	samuel	Pedro	apellido	 Alvarez	 Garcia	 Alvarez	celular	 12345678	 78943	 12345678	fecha	 02-05-1998	 02-05-2000	 02-05-1998	

@@ -4,12 +4,14 @@
 #include "../include/Nodos/NodoGraph.h"
 #include "../include/utilidades/GeneradorDotFile.h"
 #include "../include/recursos/Graficas.h"
+#include "../include/recursos/Exportaciones.h"
 #include <iostream>
 using namespace std;
 Terminal *terminal= new Terminal(5);
 Importacion *importacion= new Importacion();
 vector<NodoGrupo*>lista;
 Graficas *graficas = new Graficas();
+Exportaciones *exportacion= new Exportaciones();
 void start::Start() {
     int menu=0;
     while(menu!=6){
@@ -41,6 +43,7 @@ void start::Start() {
                 graficas->menu(lista);
                 break;
             case  4:
+                    exportacion->archivo(lista);
                 break;
             case  5:
                 lista=importacion->archivo();

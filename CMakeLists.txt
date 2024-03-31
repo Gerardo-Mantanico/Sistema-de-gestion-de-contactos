@@ -21,4 +21,8 @@ add_executable(Gestion_Contactos main.cpp
         include/utilidades/AgregarContactos.h
         src/AgregarContactos.cpp
         src/Graficas.cpp
+        include/recursos/Exportaciones.h
+        include/recursos/Exportaciones.h
+        src/Exportaciones.cpp
+        include/Nodos/ListaValor.h
 )

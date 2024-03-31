@@ -1,6 +1,7 @@
 #include<iostream>
 #include <string>
 #include <list>
+#include "ListaValor.h"
 
 using namespace std;
 #ifndef GESTION_CONTACTOS_CAMPONODO_H
@@ -11,8 +12,8 @@ public:
     string  name_campo;
     string type;
     list<string> datos;
+    ListaValor listavalor;
     CampoNodo* siguiente;
-
     CampoNodo(int llave, string name_campo, string type){
         this->llave=llave;
         this->name_campo=name_campo;

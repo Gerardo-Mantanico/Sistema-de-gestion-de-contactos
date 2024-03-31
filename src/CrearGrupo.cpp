@@ -61,8 +61,8 @@ void CrearGrupo::crear(std::string nombre, std::string campo, vector<NodoGrupo *
      auto fin =campo.cend();
      while (regex_search(inicio, fin, match_campos, patron_campos)) {
         cout<<match_campos[1]<<"     "<<match_campos[2]<<endl;
-
-         crearCampo1->crear(match_campos[1],match_campos[2],nodoGrupo->lista);
+        nodoGrupo->list_estrucura.push_back(match_campos[1]);
+        crearCampo1->crear(match_campos[1],match_campos[2],nodoGrupo->lista);
         inicio = match_campos[0].second;
     }
 

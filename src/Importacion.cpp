@@ -5,18 +5,16 @@
 #include <fstream>
 using namespace std;
 
-Terminal *terminal1= new Terminal(5);
-vector<NodoGrupo*> Importacion::archivo() {
+void Importacion::archivo(Reportes *reportes, Terminal *terminal) {
     ifstream archivo("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/archivo");
     string texto;
     if (archivo.is_open()) {
         while (getline(archivo, texto)) {
-            terminal1->entrada(texto);
+            terminal->entrada(texto,reportes);
         }
         archivo.close();
     } else {
         cout << "No se pudo abrir el archivo";
     }
-    return terminal1->list;
 }
 

@@ -19,7 +19,8 @@ void AgregarContactos::insertarCampos(std::string campo) {
         auto it = next(grupo8->list_estrucura.begin(), index);
         int llave =fh->function_hash(*it,grupo8->lista.size());
         grupo8->lista[llave]->datos.push_back(campo);
-        grupo8->lista[llave]->listavalor.insertarAlInicio(campo);
+
+      //  grupo8->lista[llave]->insertarAlInicio(campo);
         index++;
     } else {
         std::cout << "Índice fuera de rango." << std::endl;

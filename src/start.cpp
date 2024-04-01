@@ -5,6 +5,7 @@
 #include "../include/utilidades/GeneradorDotFile.h"
 #include "../include/recursos/Graficas.h"
 #include "../include/recursos/Exportaciones.h"
+#include "../include/utilidades/Reportes.h"
 #include <iostream>
 using namespace std;
 Terminal *terminal= new Terminal(5);
@@ -12,6 +13,7 @@ Importacion *importacion= new Importacion();
 vector<NodoGrupo*>lista;
 Graficas *graficas = new Graficas();
 Exportaciones *exportacion= new Exportaciones();
+Reportes *reportes= new Reportes();
 void start::Start() {
     int menu=0;
     while(menu!=6){
@@ -26,18 +28,11 @@ void start::Start() {
         cin>>menu;
         switch (menu) {
             case  1:
-                terminal->consola();
+                terminal->consola(reportes);
                 lista=terminal->list;
                 break;
             case  2:
-                for (int i = 0; i <lista.size(); ++i) {
-                    if(lista[i]!=0){
-                        cout<<i<<" "<<lista[i]->name_grupo<<endl;
-                    }
-                    else{
-                        cout<<i<<" "<<lista[i]<<endl;
-                    }
-                }
+                reportes->repotes_menu(lista);
                 break;
             case  3:
                 graficas->menu(lista);
@@ -46,7 +41,11 @@ void start::Start() {
                     exportacion->archivo(lista);
                 break;
             case  5:
-                lista=importacion->archivo();
+                importacion->archivo(reportes,terminal);
+                lista=terminal->list;
+                break;
+            case 6:
+                cout<<"Sistema Finalizado :D";
                 break;
             default:
                 cout<<"Fuera de rango"<<endl;

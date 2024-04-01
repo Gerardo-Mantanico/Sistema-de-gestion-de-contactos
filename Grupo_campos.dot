@@ -1,9 +1,5 @@
 digraph G {
     node [shape=circle, style=filled, fillcolor=lightblue, fontcolor=black]; // Configuración de nodos
     
-    63 [label="javier"];
-    63 -> 57;
-    57 [label="samuel"];
-    63 -> 93;
-    93 [label="Pedro"];
+    95 [label="1234567897"];
 }

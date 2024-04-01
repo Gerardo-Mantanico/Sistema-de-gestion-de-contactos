@@ -43,17 +43,13 @@ void crear_exportacion(NodoGrupo *NG){
     ofstream outputFile(filePath);
     if (outputFile.is_open()) {
         for (string estrucura :NG->list_estrucura) {
-            outputFile <<estrucura<<"\t \n";
-        }
-
-            NodoValor* actual = ;
-            while (actual != nullptr) {
-                std::cout << actual->dato << " ";
-                actual = actual->siguiente;
+            outputFile <<"\n"+estrucura<<"\t";
+            int llave= fun->function_hash(estrucura,NG->lista.size());
+            for (string cam:NG->lista[llave]->datos) {
+                outputFile << cam<<"\t";
             }
-            std::cout << std::endl;
-        }
 
+        }
         outputFile.close();
         cout << "Archivo de texto creado correctamente." << endl;
     } else {

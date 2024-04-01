@@ -3,6 +3,7 @@
 #include <chrono>
 #include <ctime>
 #include <iomanip>
+#include <unordered_map>
 
 void Reportes::log(std::string comando, string accion) {
     // Obtener el tiempo actual
@@ -67,7 +68,6 @@ void cantidad_grupos(vector<NodoGrupo*> &lista){
         if(lista[i]!=NULL){
            int cantidad=0;
             NodoGrupo *nodoGrup= lista[i];
-
             for (int j = 0; j <nodoGrup->lista.size(); ++j) {
                 if(nodoGrup->lista[j]!=NULL){
                     cantidad=cantidad+nodoGrup->lista[j]->datos.size();
@@ -79,11 +79,33 @@ void cantidad_grupos(vector<NodoGrupo*> &lista){
     }
 }
 
+void cantidad_mismo_tipo(vector<NodoGrupo*>lista){
+    unordered_map<string, int> contador;
+    for (int i = 0; i < lista.size(); ++i) {
+        if(lista[i]!=NULL){
+            NodoGrupo *nodoGrup= lista[i];
+            for (int j = 0; j <nodoGrup->lista.size(); ++j) {
+                if(nodoGrup->lista[j]!=NULL){
+                    for (const auto& elemento: nodoGrup->lista[j]->datos) {
+                        contador[elemento]++;
+                    }
+                }
 
+            }
+        }
+    }
+
+    //mostrar el resultado
+    for (const auto& elemento:contador) {
+        if(elemento.second>1){
+            cout<<elemento.first<<": "<<elemento.second<<" veces"<<endl;
+        }
+    }
+}
 void Reportes::repotes_menu(vector<NodoGrupo*> &lista) {
     int menu;
     while(menu!=-1){
-        cout<<"1) Cantidad de datos por Grupo \n";
+        cout<<"\n1) Cantidad de datos por Grupo \n";
         cout<<"2) Cantidad de datos de todo el sistema \n";
         cout<<"3) Cantidad de Contactos con el mismo tipo de dato del campo de criterio de ordenamiento \n";
         cout<<"4) Cantidad de Contactos por Grupo \n";
@@ -98,7 +120,7 @@ void Reportes::repotes_menu(vector<NodoGrupo*> &lista) {
                 cantidad_sistema(lista);
                 break;
             case 3:
-
+                cantidad_mismo_tipo(lista);
                 break;
             case 4:
                 cantidad_contactos_grupo(lista);

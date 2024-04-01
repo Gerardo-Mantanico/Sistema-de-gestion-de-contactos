@@ -4,19 +4,15 @@
 #include "../include/hash/FuncionHash.h"
 #include <fstream>
 #include <filesystem>
-
 #ifdef _WIN32
 #include <direct.h> // Para Windows
 #define mkdir _mkdir
 #else
 #include <sys/stat.h> // Para sistemas basados en Unix
 #endif
-
 using namespace std;
-namespace fs = std::filesystem;
+namespace fs = filesystem;
 FuncionHash *fun=new FuncionHash();
-
-
 void crear_exportacion(NodoGrupo *NG){
     // Crear una carpeta
     string folderName = "../"+NG->name_grupo;
@@ -42,13 +38,13 @@ void crear_exportacion(NodoGrupo *NG){
     string filePath = folderName +"/contactos.txt";
     ofstream outputFile(filePath);
     if (outputFile.is_open()) {
+        int cont;
         for (string estrucura :NG->list_estrucura) {
             outputFile <<"\n"+estrucura<<"\t";
             int llave= fun->function_hash(estrucura,NG->lista.size());
             for (string cam:NG->lista[llave]->datos) {
-                outputFile << cam<<"\t";
+                outputFile <<cam<<"\t";
             }
-
         }
         outputFile.close();
         cout << "Archivo de texto creado correctamente." << endl;

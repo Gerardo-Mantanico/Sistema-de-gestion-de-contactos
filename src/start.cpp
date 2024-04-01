@@ -38,7 +38,7 @@ void start::Start() {
                 graficas->menu(lista);
                 break;
             case  4:
-                    exportacion->archivo(lista);
+                exportacion->archivo(lista);
                 break;
             case  5:
                 importacion->archivo(reportes,terminal);

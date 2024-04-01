@@ -1,4 +1,0 @@
-
-nombre	Pedro24	Mario	juan	maria	rolando	
-apellido	Alvarez24	Alvarez24	Alvarez24	Alvarez24	Alvarez24	
-celular	1234567897	1234567897	1234567897	1234567897	1234567897	

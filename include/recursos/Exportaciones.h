@@ -8,9 +8,9 @@
 
 #include "../Nodos/NodoGrupo.h"
 
-class Exportaciones {
-public:
-    void  archivo(vector<NodoGrupo*> &lista);
+    class Exportaciones {
+    public:
+        void  archivo(vector<NodoGrupo*> &lista);
 };
 
 

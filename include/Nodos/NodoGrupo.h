@@ -19,6 +19,9 @@ public:
         this->anterios=NULL;
         this->siguiente=NULL;
     }
+    ~NodoGrupo(){
+        delete siguiente,anterios;
+    }
 };
 
 

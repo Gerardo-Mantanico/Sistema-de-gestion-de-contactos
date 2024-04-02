@@ -3,7 +3,6 @@
 #include <functional>
 #include "../include/utilidades/GeneradorDotFile.h"
 
-
 void GeneradorDotFile::generateDotFile(NodoGraph *root, const std::string &filePath) {
     ofstream file(filePath);
     if (!file.is_open()) {

@@ -15,16 +15,21 @@ void AgregarContactos::buscargrupo(std::string name_grupo,vector<NodoGrupo*> &li
 }
 
 void AgregarContactos::insertarCampos(std::string campo) {
-    if (index >= 0 && index < grupo8->list_estrucura.size()) {
-        auto it = next(grupo8->list_estrucura.begin(), index);
-        int llave =fh->function_hash(*it,grupo8->lista.size());
-        grupo8->lista[llave]->datos.push_back(campo);
-
-      //  grupo8->lista[llave]->insertarAlInicio(campo);
-        index++;
-    } else {
-        std::cout << "Índice fuera de rango." << std::endl;
+    if(grupo8!=NULL){
+        if (index >= 0 && index < grupo8->list_estrucura.size()) {
+            auto it = next(grupo8->list_estrucura.begin(), index);
+            int llave =fh->function_hash(*it,grupo8->lista.size());
+            grupo8->lista[llave]->datos.push_back(campo);
+            index++;
+        } else {
+            std::cout << "Índice fuera de rango." << std::endl;
+        }
     }
+    else{
+        cout<<"El grupo no existes"<<endl;
+        return;
+    }
+
 
 }
 

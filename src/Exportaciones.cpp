@@ -53,6 +53,13 @@ void crear_exportacion(NodoGrupo *NG){
         return;
     }
 
+#ifdef _WIN32
+    // Para sistemas Windows
+    system(("start  "+filePath).c_str());
+#else
+    // Para sistemas Unix
+    system(("xdg-open "+filePath).c_str());
+#endif
 }
 
 void Exportaciones::archivo(vector<NodoGrupo*> &lista) {

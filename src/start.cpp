@@ -14,6 +14,7 @@ vector<NodoGrupo*>lista;
 Graficas *graficas = new Graficas();
 Exportaciones *exportacion= new Exportaciones();
 Reportes *reportes= new Reportes();
+
 void start::Start() {
     int menu=0;
     while(menu!=6){
@@ -46,10 +47,16 @@ void start::Start() {
                 break;
             case 6:
                 cout<<"Sistema Finalizado :D";
+                delete terminal;
+                delete reportes;
+                delete graficas;
+                delete exportacion;
+                delete importacion;
                 break;
             default:
                 cout<<"Fuera de rango"<<endl;
         }
+
     }
 
 }

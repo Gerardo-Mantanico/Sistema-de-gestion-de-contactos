@@ -9,6 +9,16 @@ GeneradorDotFile *generador= new GeneradorDotFile();
 ArbolAlv *arbolAl = new ArbolAlv();
 NodoGraph *nodo=NULL;
 FuncionHash *fhas= new FuncionHash();
+void ejecutar_img(string path){
+#ifdef _WIN32
+    // Para sistemas Windows
+    system(("start  ../"+path).c_str());
+#else
+    // Para sistemas Unix
+    system(("sh -c \"" + path + "\"").c_str());
+#endif
+
+}
 void Graficas::menu(vector<NodoGrupo*>list) {
     int opcion;
     int Clave;
@@ -31,8 +41,9 @@ void Graficas::menu(vector<NodoGrupo*>list) {
                     }
                 }
                 generador->generateDotFile(nodo,"../Campos.dot");
-                system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Campos.png");
-                break;
+               // system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Campos.png");
+                ejecutar_img("Campos.png");
+               break;
             case 2:
                 nodo=NULL;
                 cout<<"ingrese el nombre del Grupo"<<endl;
@@ -45,7 +56,8 @@ void Graficas::menu(vector<NodoGrupo*>list) {
                     }
                 }
                 generador->generateDotFile(nodo,"../Grupos.dot");
-                system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Grupos.png");
+                ejecutar_img("Grupos.png");
+               // system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Grupos.png");
                 break;
             case 3:
                 nodo=NULL;
@@ -63,7 +75,8 @@ void Graficas::menu(vector<NodoGrupo*>list) {
 
                 }
                 generador->generateDotFile(nodo,"../Grupo_campos.dot");
-                system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Grupo_campos.png");
+                ejecutar_img("Grupo_campos.png");
+              //  system("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/Grupo_campos.png");
                 break;
         }
 

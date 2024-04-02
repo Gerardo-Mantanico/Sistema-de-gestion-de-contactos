@@ -6,7 +6,7 @@
 using namespace std;
 
 void Importacion::archivo(Reportes *reportes, Terminal *terminal) {
-    ifstream archivo("C:/Users/HP/CLionProjects/Gestion-Contactos/Sistema-de-gestion-de-contactos/archivo");
+    ifstream archivo("../archivo");
     string texto;
     if (archivo.is_open()) {
         while (getline(archivo, texto)) {

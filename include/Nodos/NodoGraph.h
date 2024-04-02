@@ -8,5 +8,8 @@ public:
     NodoGraph *izquierda, *derecha;
     int altura;
     string dato;
+    ~NodoGraph(){
+        delete izquierda, derecha;
+    }
 };
 #endif //GESTION_CONTACTOS_NODOGRAPH_H

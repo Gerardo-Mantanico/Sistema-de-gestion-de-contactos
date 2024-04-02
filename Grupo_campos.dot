@@ -1,5 +1,49 @@
 digraph G {
     node [shape=circle, style=filled, fillcolor=lightblue, fontcolor=black]; // Configuración de nodos
     
-    95 [label="1234567897"];
+    53 [label="Alvarez2"];
+    53 -> 21;
+    21 [label="Alvarez24"];
+    21 -> 13;
+    13 [label="Alvarez14"];
+    13 -> 9;
+    9 [label="Alvarez9"];
+    9 -> 3;
+    3 [label="Alvarez22"];
+    3 -> 1;
+    1 [label="Alvarez8"];
+    3 -> 4;
+    4 [label="Alvarez13"];
+    9 -> 12;
+    12 [label="Alvarez23"];
+    21 -> 22;
+    22 [label="Alvarez15"];
+    22 -> 45;
+    45 [label="Alvarez1"];
+    45 -> 37;
+    37 [label="Alvarez0"];
+    37 -> 31;
+    31 [label="Alvarez16"];
+    37 -> 40;
+    40 [label="Alvarez17"];
+    45 -> 49;
+    49 [label="Alvarez18"];
+    53 -> 61;
+    61 [label="Alvarez3"];
+    61 -> 58;
+    58 [label="Alvarez19"];
+    61 -> 86;
+    86 [label="Alvarez11"];
+    86 -> 77;
+    77 [label="Alvarez5"];
+    77 -> 69;
+    69 [label="Alvarez4"];
+    77 -> 85;
+    85 [label="Alvarez6"];
+    86 -> 94;
+    94 [label="Alvarez21"];
+    94 -> 93;
+    93 [label="Alvarez7"];
+    94 -> 95;
+    95 [label="Alvarez12"];
 }

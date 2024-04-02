@@ -18,6 +18,9 @@ public:
         this->type=type;
         this->siguiente=NULL;
     }
+    ~CampoNodo(){
+        delete siguiente;
+    }
 
 
 };

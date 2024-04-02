@@ -8,6 +8,7 @@
 class ArbolAlv {
 public:
     NodoGraph* insert(NodoGraph* nodo, int llave,string campo);
+    ~ArbolAlv();
 };
 
 
